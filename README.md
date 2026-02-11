@@ -5,3 +5,4 @@
 - install tailwind CSS
 - Install Daisy Ui
 - Add navbar component to app.tsx
+- testing 
