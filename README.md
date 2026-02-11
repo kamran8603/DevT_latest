@@ -5,4 +5,8 @@
 - install tailwind CSS
 - Install Daisy Ui
 - Add navbar component to app.tsx
-- testing 
+- create a navbarjsx seprate component file
+- install react-router-dom
+- create browserRouter>routes=/ body>childrenRoutes
+- createan outlet in your body component
+- create a footer
