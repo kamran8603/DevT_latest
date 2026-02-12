@@ -10,3 +10,4 @@
 - create browserRouter>routes=/ body>childrenRoutes
 - createan outlet in your body component
 - create a footer
+- started 2nd videos
