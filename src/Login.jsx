@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios"
+import { addUser } from "./utils/userSlice";
+import{useDispatch} from "react-redux"
 function Login() {
-  const [emailId, setEmailId]= useState("nirmal@gamil.com");
-  const [password, setPassword]= useState("Password@123 ");
+  const [emailId, setEmailId] = useState("elon@gmail.com");
+  const [password, setPassword] = useState("Elon@123");
+  const dispatch = useDispatch()
 
-  const handleLogin= async()=>{
-    try{
-        const res = await axios.post("http://localhost:7777/login",{
-    emailId,
-    password
-  })
+  const handleLogin = async () => {
+    try {
+      const res = await axios.post("http://localhost:7777/login", {
+        emailId,
+        password
+      }, { withCredentials: true })
+      console.log(res.data)
+      dispatch(addUser(res.data))
     }
-    catch(err){
+    catch (err) {
       console.log(err)
     }
 
@@ -25,13 +30,13 @@ function Login() {
           <div className="">
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Email Id: {emailId}</legend>
-              <input type="text" value={emailId} onChange={(e)=>setEmailId(e.target.value)} className="input"  />
+              <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} className="input" />
             </fieldset>
             {/* //password */}
-             <fieldset className="fieldset">
+            <fieldset className="fieldset">
               <legend className="fieldset-legend">Password</legend>
-              <input type="text" onChange={(e)=>setPassword(e.target.value)} value={password} className="input"  />
-             
+              <input type="text" onChange={(e) => setPassword(e.target.value)} value={password} className="input" />
+
             </fieldset>
           </div>
           <div className="card-actions justify-end">
