@@ -11,3 +11,4 @@
 - createan outlet in your body component
 - create a footer
 - create a login page
+- redux setting done 
