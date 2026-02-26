@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom"
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux"
 import { BASE_URL } from "../utils/constants";
+
+
 function Login() {
   const [emailId, setEmailId] = useState("elon@gmail.com");
   const [password, setPassword] = useState("Elon@123");
@@ -18,7 +20,7 @@ function Login() {
         emailId,
         password
       }, { withCredentials: true })
-      // console.log(res.data)
+     
       dispatch(addUser(res.data))
       return navigate("/")
     }

@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { BASE_URL } from '../utils/constants'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFeed } from '../utils/feedSlice'
+import UserCard from './UserCard'
 function Feed() {
   // it will give the whole feed we can access using selectore
   const feed = useSelector((store)=>store.feed)
@@ -14,10 +15,10 @@ function Feed() {
     if(feed) return
     try{const res = await axios.get(BASE_URL+"/feed",{withCredentials:true})
     dispatch(addFeed(res.data))
-    console.log(res.data)
+    
   }
     catch(err){
-      console.log(err)
+      console.err(err)
     }
 
   }
@@ -25,10 +26,13 @@ function Feed() {
     getFeed()
   },[])
   return (
-    <div>
-      this is my feed
+    //condition lgaye hai agr mera when the feed is present then load the data otherwise dont loaded
+    // when there is a feed then it will load
+  feed && (  <div className='flex justify-center my-10'>
+     <UserCard user={feed[0]}/>
     </div>
   )
+)
 }
 
 export default Feed

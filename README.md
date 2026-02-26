@@ -12,3 +12,4 @@
 - create a footer
 - create a login page
 - redux setting done 
+--56min se start krna hai 
