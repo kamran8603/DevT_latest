@@ -34,7 +34,7 @@ function Connections() {
                     return (
                         <div key={_id} className=' flex  m-4 p-4 border-rounded-lg bg-base-300 w-1/2 mx-auto'>
                             <div>
-                                <img className='w-20 h-20 rounded-full' alt='photo' src={photoUrl} />
+                                <img className='w-20 h-20 rounded-full object-contain' alt='photo' src={photoUrl} />
                             </div>
                             <div className='text-left mx-4'>
                                 <h2 className='font-bold text-xl'>{firstName + " " + lastName}</h2>
