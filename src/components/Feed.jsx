@@ -25,6 +25,8 @@ function Feed() {
   useEffect(()=>{
     getFeed()
   },[])
+  if(!feed)return;
+  if(feed.length<=0) return <h1>No new Users founds!</h1>
   return (
     //condition lgaye hai agr mera when the feed is present then load the data otherwise dont loaded
     // when there is a feed then it will load

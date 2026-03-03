@@ -7,9 +7,12 @@ import { BASE_URL } from "../utils/constants";
 
 
 function Login() {
-  const [emailId, setEmailId] = useState("elon@gmail.com");
-  const [password, setPassword] = useState("Elon@123");
+  const [emailId, setEmailId] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName]= useState("")
+  const [lastName, setLastName]= useState("")
   const [error, setError]= useState("")
+  const [isLoginForm, setLoginForm]=useState(true)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -30,13 +33,54 @@ function Login() {
     }
 
   }
+  const handleSignUp= async ()=>{
+    try{
+      const res = await axios.post(BASE_URL+"/signup",{firstName,lastName,emailId,password},{withCredentials:true})
+      console.log(res.data)
+      dispatch(addUser(res.data.data))
+       return navigate("/profile")
+    }
+    catch(err){
+    console.log(err.message)
+    }
+  }
 
   return (
     <div className="flex justify-center my-10 ">
       <div className="card bg-base-300 text-primary-content w-96">
         <div className="card-body">
-          <h2 className="card-title">Login</h2>
-          <div className="">
+          <h2 className="card-title">{isLoginForm ? "Login" : "SignUp"}</h2>
+
+
+       
+      
+            <div className="">
+
+              {
+        !isLoginForm && (
+          <>
+          <fieldset className="fieldset">
+              <legend className="fieldset-legend">First Name {emailId}</legend>
+              <input type="text" value={firstName} onChange={(e) => setFirstName(e.target.value)} className="input" />
+            </fieldset>
+            {/* //password */}
+            <fieldset className="fieldset">
+              <legend className="fieldset-legend">Last Name</legend>
+              <input type="text" onChange={(e) => setLastName(e.target.value)} value={lastName} className="input" />
+
+            </fieldset>
+          </>
+        )
+       }
+
+          
+          
+
+
+
+
+
+
             <fieldset className="fieldset">
               <legend className="fieldset-legend">Email Id: {emailId}</legend>
               <input type="text" value={emailId} onChange={(e) => setEmailId(e.target.value)} className="input" />
@@ -50,8 +94,13 @@ function Login() {
           </div>
           <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center m-2">
-            <button className="btn btn-primary" onClick={handleLogin}>Login</button>
+            <button className="btn btn-primary" onClick={isLoginForm ? handleLogin : handleSignUp}>{isLoginForm ?"Login":"SignUp"}</button>
           </div>
+          <p className="m-auto cursor-pointer py-2" onClick={()=>setLoginForm((value)=>!value)}>
+           {
+            isLoginForm? "New User? SignUp Here" : "Existing User ? Login Here"
+           }
+          </p>
         </div>
       </div>
     </div>
