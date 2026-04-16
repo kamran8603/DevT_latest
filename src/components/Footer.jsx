@@ -61,6 +61,7 @@
 // export default Footer
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Footer() {
   return (
@@ -89,7 +90,7 @@ function Footer() {
                 </div>
               </div>
               <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
-                DevTinder
+                CodeSwipe
               </span>
             </div>
             <p className="text-gray-400 text-xs sm:text-sm">
@@ -105,25 +106,25 @@ function Footer() {
             <div className="text-center">
               <h3 className="text-sm font-semibold text-gray-300 mb-2">Product</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Features</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">How it Works</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Pricing</a></li>
+                <li><Link to="/feautures" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Features</Link></li>
+                <li><Link to="/howItWorks" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">How it Works</Link></li>
+                <li><Link to="/pricing" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Pricing</Link></li>
               </ul>
             </div>
             <div className="text-center">
               <h3 className="text-sm font-semibold text-gray-300 mb-2">Company</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">About Us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Careers</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Contact</a></li>
+                <li><Link to="/aboutUs" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">About Us</Link></li>
+                <li><Link to="/careers" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Careers</Link></li>
+                <li><Link to="/contact" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Contact</Link></li>
               </ul>
             </div>
             <div className="text-center">
               <h3 className="text-sm font-semibold text-gray-300 mb-2">Legal</h3>
               <ul className="space-y-1">
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Cookie Policy</a></li>
+                <li><Link to="/privacy" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Privacy Policy</Link></li>
+                <li><Link to="/termsServices" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Terms of Service</Link></li>
+                <li><Link to="/cookiePrivacy" className="text-gray-400 hover:text-white text-xs sm:text-sm transition-colors duration-200">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>

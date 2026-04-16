@@ -128,7 +128,7 @@ const Navbar = () => {
                 </div>
               </div>
               <span className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-red-500 via-pink-500 to-orange-500 bg-clip-text text-transparent group-hover:from-red-400 group-hover:via-pink-400 group-hover:to-orange-400 transition-all duration-300">
-                DevTinder
+                CodeSwipe
               </span>
             </Link>
             
