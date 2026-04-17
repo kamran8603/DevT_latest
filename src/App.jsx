@@ -17,6 +17,7 @@ import CookiePrivacy from "./components/CookiePrivacy";
 import TermsServices from "./components/TermsServices";
 import Careers from "./components/Careers";
 import Features from "./components/Features";
+import Messages from "./components/Messages";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
                <Route path="/termsServices" element={<TermsServices/>} />
                <Route path="/careers" element={<Careers/>} />
                 <Route path="/feautures" element={<Features/>} />
+                <Route path="/messages" element={<Messages/>} />
 
           </Route>
           
